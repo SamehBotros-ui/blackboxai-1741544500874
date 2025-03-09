@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Mobile App</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        // Tailwind Configuration
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#6B7280',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles */
+        .rtl {
+            direction: rtl;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-800 shadow-md z-50">
+        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+            <!-- Hamburger Menu -->
+            <button id="sidebar-toggle" class="text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- App Logo -->
+            <div class="text-xl font-bold text-primary">FreelanceApp</div>
+            
+            <!-- Theme & Language Toggle -->
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="text-xl">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                </button>
+                <button id="lang-toggle" class="text-sm font-medium">
+                    EN/عربي
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg transform -translate-x-full transition-transform duration-300 z-50">
+        <div class="p-4">
+            <div class="flex justify-end">
+                <button id="sidebar-close" class="text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mt-8 space-y-4">
+                <a href="#profile" class="block py-2 hover:text-primary">
+                    <i class="fas fa-user mr-2"></i> Profile
+                </a>
+                <a href="#settings" class="block py-2 hover:text-primary">
+                    <i class="fas fa-cog mr-2"></i> Settings
+                </a>
+                <a href="#notifications" class="block py-2 hover:text-primary">
+                    <i class="fas fa-bell mr-2"></i> Notifications
+                </a>
+                <a href="#help" class="block py-2 hover:text-primary">
+                    <i class="fas fa-question-circle mr-2"></i> Help
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 pt-20 pb-20">
+        <div id="app">
+            <!-- Dynamic content will be loaded here -->
+            <!-- Initial view - Search Section -->
+            <section id="search-section" class="space-y-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search for work..." class="w-full p-4 rounded-lg border dark:border-gray-700 dark:bg-gray-800 focus:ring-2 focus:ring-primary">
+                    <button class="absolute right-4 top-1/2 transform -translate-y-1/2 text-primary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <!-- Categories -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                        <i class="fas fa-code text-2xl text-primary mb-2"></i>
+                        <h3 class="font-semibold">Development</h3>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                        <i class="fas fa-paint-brush text-2xl text-primary mb-2"></i>
+                        <h3 class="font-semibold">Design</h3>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-around py-3">
+                <a href="#search" class="text-primary">
+                    <i class="fas fa-search"></i>
+                    <span class="block text-xs mt-1">Search</span>
+                </a>
+                <a href="#post-job" class="text-gray-500 dark:text-gray-400">
+                    <i class="fas fa-plus-circle"></i>
+                    <span class="block text-xs mt-1">Post Job</span>
+                </a>
+                <a href="#learn" class="text-gray-500 dark:text-gray-400">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span class="block text-xs mt-1">Learn</span>
+                </a>
+                <a href="#marketplace" class="text-gray-500 dark:text-gray-400">
+                    <i class="fas fa-store"></i>
+                    <span class="block text-xs mt-1">Market</span>
+                </a>
+                <a href="#community" class="text-gray-500 dark:text-gray-400">
+                    <i class="fas fa-users"></i>
+                    <span class="block text-xs mt-1">Community</span>
+                </a>
+                <a href="#chat" class="text-gray-500 dark:text-gray-400">
+                    <i class="fas fa-comments"></i>
+                    <span class="block text-xs mt-1">Chat</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="src/app.js" type="module"></script>
+</body>
+</html>
